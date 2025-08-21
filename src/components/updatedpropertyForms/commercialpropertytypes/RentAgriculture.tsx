@@ -512,7 +512,7 @@ const RentAgriculture = () => {
             status: 'Available',
           }
         };
-        const response = await axios.post('/api/commercial/rent/agriculture', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/rent/agriculture', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

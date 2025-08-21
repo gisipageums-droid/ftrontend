@@ -560,7 +560,7 @@ const LeaseOthersMain = () => {
 
         toast.info('Submitting property listing... Please wait');
 
-        const response = await axios.post('/api/commercial/lease/others', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/lease/others', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

@@ -84,7 +84,7 @@ interface Subscription {
     try {
       console.log("Fetching user details for ID:", userId); // ✅ Debug log
 
-      const response = await fetch(`/api/sign/user/${userId}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/sign/user/${userId}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -141,7 +141,7 @@ interface Subscription {
   };
     const fetchSubscription = async (id: string) => {
   try {
-    const res  = await fetch(`http://localhost:3000/api/subscription/${id}`);
+    const res  = await fetch(`http://localhost:3000https://backend-7vs3.onrender.com/api/subscription/${id}`);
     const data = await res.json();
 
     if (!res.ok) throw new Error(data.error || "Failed to load subscription");
@@ -190,7 +190,7 @@ interface Subscription {
       return;
     }
 
-    fetch(`/api/sign/user/update/${userId}`, {
+    fetch(`https://backend-7vs3.onrender.com/api/sign/user/update/${userId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -251,7 +251,7 @@ interface Subscription {
     console.log("🔄 Changing password for User ID:", userId);
 
     try {
-      const response = await fetch(`/api/sign/user/update-password/${userId}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/sign/user/update-password/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

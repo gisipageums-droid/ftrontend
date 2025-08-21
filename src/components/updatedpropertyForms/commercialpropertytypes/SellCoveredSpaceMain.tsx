@@ -496,7 +496,7 @@ const SellCoveredSpaceMain = () => {
       console.log('Submitting data:', transformedData);
 
       // Submit to backend API
-      const response = await axios.post('/api/commercial/sell/covered-space', transformedData);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/covered-space', transformedData);
 
       if (response.status === 201) {
         toast.success("Property listed successfully!");

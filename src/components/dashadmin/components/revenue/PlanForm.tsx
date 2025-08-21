@@ -73,8 +73,8 @@ const PlanForm: React.FC<PlanFormProps> = ({ onClose, editingPlan }) => {
       }
 
       const url = editingPlan
-        ? `/api/subscription/${planId}` // ✅ Use _id or id
-        : "/api/subscription";
+        ? `https://backend-7vs3.onrender.com/api/subscription/${planId}` // ✅ Use _id or id
+        : "https://backend-7vs3.onrender.com/api/subscription";
 
       const method = editingPlan ? "PUT" : "POST";
 

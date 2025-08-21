@@ -14,7 +14,7 @@ const [employeeChange, setEmployeeChange] = useState(0);
   useEffect(() => {
     const fetchRevenue = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/payment/total-revenue');
+        const response = await axios.get('https://backend-7vs3.onrender.com/api/payment/total-revenue');
         setTotalRevenue(response.data.totalRevenue);
       } catch (error) {
         console.error('Error fetching total revenue:', error);
@@ -23,7 +23,7 @@ const [employeeChange, setEmployeeChange] = useState(0);
   
     const fetchActiveEmployees = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/employees/active-count');
+        const res = await axios.get('https://backend-7vs3.onrender.com/api/employees/active-count');
         console.log("📦 Active Count Response:", res.data); // 👀 Debug here
         if (res.data.success) {
           setActiveEmployees(res.data.count);
@@ -34,7 +34,7 @@ const [employeeChange, setEmployeeChange] = useState(0);
     };
     const fetchRevenueChange = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/payment/revenue-change');
+        const res = await axios.get('https://backend-7vs3.onrender.com/api/payment/revenue-change');
         if (res.data.success) {
           setTotalRevenue(res.data.current);
           setRevenueChange(res.data.change);
@@ -46,7 +46,7 @@ const [employeeChange, setEmployeeChange] = useState(0);
 
     const fetchEmployeeChange = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/employees/active-change');
+        const res = await axios.get('https://backend-7vs3.onrender.com/api/employees/active-change');
         if (res.data.success) {
           setActiveEmployees(res.data.current);
           setEmployeeChange(res.data.change);

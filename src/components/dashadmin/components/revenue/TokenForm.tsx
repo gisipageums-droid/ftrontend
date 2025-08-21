@@ -26,8 +26,8 @@ const TokenForm: React.FC<TokenFormProps> = ({
     }
 
     const url = isEdit
-      ? `/api/tokens/${initialData?._id}`
-      : `/api/tokens`;
+      ? `https://backend-7vs3.onrender.com/api/tokens/${initialData?._id}`
+      : `https://backend-7vs3.onrender.com/api/tokens`;
 
     const method = isEdit ? "PUT" : "POST";
 

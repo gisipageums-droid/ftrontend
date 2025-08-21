@@ -401,12 +401,12 @@ const LeaseOfficeSpaceMain = () => {
 
       // Log the complete data being sent to the API
       console.log('Submitting data to API:', backendData);
-      console.log('API Endpoint:', '/api/commercial/lease/office-space');
+      console.log('API Endpoint:', 'https://backend-7vs3.onrender.com/api/commercial/lease/office-space');
 
       try {
         // Make API call to create commercial lease office space
         const response = await axios.post(
-          `/api/commercial/lease/office-space`, // Fixed endpoint path to match backend route
+          `https://backend-7vs3.onrender.com/api/commercial/lease/office-space`, // Fixed endpoint path to match backend route
           backendData,
           {
             headers: {
@@ -439,7 +439,7 @@ const LeaseOfficeSpaceMain = () => {
           // Check if endpoint not found (404)
           if (apiError.response.status === 404) {
             toast.error("API endpoint not found. Please check with administrators.");
-            console.error("API endpoint '/api/commercial/lease/office-space' not found. Please verify the correct endpoint with your backend team.");
+            console.error("API endpoint 'https://backend-7vs3.onrender.com/api/commercial/lease/office-space' not found. Please verify the correct endpoint with your backend team.");
           } else {
             toast.error(apiError.response.data?.message || apiError.response.data?.details ||
               "Server error. Please try again later.");

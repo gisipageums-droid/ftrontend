@@ -38,7 +38,7 @@ const Leads: React.FC = () => {
   const fetchLeads = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/enquiry/enquiries');
+      const response = await axios.get('https://backend-7vs3.onrender.com/api/enquiry/enquiries');
 
       const leadsWithId: FormData[] = response.data.data.map((lead: any) => ({
         id: lead._id,
@@ -66,7 +66,7 @@ const Leads: React.FC = () => {
 
   const fetchLeadTokens = async () => {
     try {
-      const res = await axios.get('/api/lead-token');
+      const res = await axios.get('https://backend-7vs3.onrender.com/api/lead-token');
       const tokenMap: Record<string, number> = {};
       res.data.forEach((item: any) => {
         tokenMap[item.propertyId] = item.tokenPerLead;
@@ -81,7 +81,7 @@ const Leads: React.FC = () => {
     const userId = sessionStorage.getItem("userId");
     if (!userId) return;
     try {
-      const response = await axios.get(`/api/usertoken/${userId}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/usertoken/${userId}`);
       setUserTokens(response.data.tokens);
       setViewedLeads(response.data.viewedLeads || []);
       localStorage.setItem("viewedLeads", JSON.stringify(response.data.viewedLeads || []));
@@ -101,7 +101,7 @@ const Leads: React.FC = () => {
     if (userTokens >= tokensRequired) {
       try {
         const userId = sessionStorage.getItem("userId");
-        const res = await axios.post("/api/usertoken/deduct", {
+        const res = await axios.post("https://backend-7vs3.onrender.com/api/usertoken/deduct", {
           userId,
           amount: tokensRequired,
           leadId: lead.id,

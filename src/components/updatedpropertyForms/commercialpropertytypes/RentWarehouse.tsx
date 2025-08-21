@@ -784,7 +784,7 @@ const RentWarehouse = () => {
 
 
         console.log(transformedData);
-        const response = await axios.post('/api/commercial/rent/warehouses', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/rent/warehouses', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

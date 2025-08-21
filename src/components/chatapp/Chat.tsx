@@ -54,7 +54,7 @@ const [botFallbackSent, setBotFallbackSent] = useState(false);
   useEffect(() => {
     const fetchAllMessages = async () => {
       try {
-        const response = await fetch(`/api/messages/history/${roomId}`, {
+        const response = await fetch(`https://backend-7vs3.onrender.com/api/messages/history/${roomId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
             "Content-Type": "application/json",

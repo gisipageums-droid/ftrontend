@@ -834,7 +834,7 @@ const SellIndependentHouse = () => {
         };
 
 
-        const response = await axios.post('/api/residential/sale/independenthouse', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/sale/independenthouse', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

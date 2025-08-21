@@ -31,7 +31,7 @@ export default function PropertyRegistrationForm({
     const fetchPropertyDetails = async () => {
       try {
         const response = await fetch(
-          `/api/properties/propertyds/${propertyId}`
+          `https://backend-7vs3.onrender.com/api/properties/propertyds/${propertyId}`
         );
         if (!response.ok) throw new Error("Property not found");
 
@@ -69,7 +69,7 @@ export default function PropertyRegistrationForm({
 
     try {
       // Submit the enquiry form
-      const response = await fetch("/api/property/submit-form", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/property/submit-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -128,7 +128,7 @@ export default function PropertyRegistrationForm({
   // 🔄 Function to Trigger Lead Synchronization API
   const syncLeads = async () => {
     try {
-      const syncResponse = await fetch("/api/leads/sync-leads", {
+      const syncResponse = await fetch("https://backend-7vs3.onrender.com/api/leads/sync-leads", {
         method: "POST",
       });
 

@@ -682,7 +682,7 @@ const LeaseCoveredSpaceMain = () => {
 
       // Make API call to create commercial lease covered space
       const response = await axios.post(
-        `/api/commercial/lease/covered-space`,
+        `https://backend-7vs3.onrender.com/api/commercial/lease/covered-space`,
         backendData,
         {
           headers: {

@@ -83,7 +83,7 @@ const ProfileSection: React.FC<ProfileSectionProps> = ({ user }) => {
   const handleSave = async () => {
     try {
       // Here you would typically make an API call to update the user profile
-      // For example: await axios.put(`/api/users/${user._id}`, editedUser);
+      // For example: await axios.put(`https://backend-7vs3.onrender.com/api/users/${user._id}`, editedUser);
 
       // For now, we'll just toggle the editing state
       setIsEditing(false)

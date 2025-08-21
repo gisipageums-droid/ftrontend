@@ -61,7 +61,7 @@ export default function AddEmployeeForm({
       if (validateForm()) {
         // First request: Add employee
         const employeeResponse = await axios.post(
-          "https://api.rentamigo.in//api/employees",
+          "https://backend-7vs3.onrender.com/api/employees",
           {
             firstname: formData.firstname,
             lastname: formData.lastname,
@@ -73,7 +73,7 @@ export default function AddEmployeeForm({
 
         // Send welcome email regardless of employee response success
         const emailResponse = await axios.post(
-          "https://api.rentamigo.in//api/email/send-email",
+          "https://backend-7vs3.onrender.com/api/email/send-email",
           {
             content: "rentamigo.in",
             toEmailAddress: formData.email,

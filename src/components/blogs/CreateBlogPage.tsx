@@ -146,7 +146,7 @@ const CreateBlogPage = () => {
     const loadData = async () => {
       if (isEditing && id) {
         try {
-          const response = await axios.get(`/api/blog/${id}`);
+          const response = await axios.get(`https://backend-7vs3.onrender.com/api/blog/${id}`);
           if (response.data.success) {
             let blog = response.data.blog;
             if (blog) {
@@ -309,14 +309,14 @@ const CreateBlogPage = () => {
         // console.log(status)
 
         if (isEditing && id) {
-          const response = await axios.put(`/api/blog/edit/${id}`, blogData);
+          const response = await axios.put(`https://backend-7vs3.onrender.com/api/blog/edit/${id}`, blogData);
           if (response.data.success) {
             toast.success("Blog updated successfully");
           } else {
             toast.error("Failed to update the blog");
           }
         } else {
-          const response = await axios.post("/api/blog/add", blogData);
+          const response = await axios.post("https://backend-7vs3.onrender.com/api/blog/add", blogData);
           if (response.data.success) {
             toast.success(response.data.message);
           } else {

@@ -71,7 +71,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   // const handleLike =async (e: React.MouseEvent) => {
   //     e.preventDefault();
   //     try {
-  //       const response = await axios.get(`/api/likes/${id}`)
+  //       const response = await axios.get(`https://backend-7vs3.onrender.com/api/likes/${id}`)
   //     } catch (error) {
 
   //     }

@@ -43,7 +43,7 @@ const PGListings: React.FC = () => {
   useEffect(() => {
     const fetchPGs = async () => {
       try {
-        const response = await axios.get('/api/residential/pgmain');
+        const response = await axios.get('https://backend-7vs3.onrender.com/api/residential/pgmain');
         setPgs(response.data.data);
         setLoading(false);
       } catch (err) {
@@ -95,7 +95,7 @@ const handleDelete = async (propertyId: string) => {
   if (!confirmDelete) return;
 
   try {
-    const response = await axios.delete(`/api/residential/pgmain/${propertyId}`);
+    const response = await axios.delete(`https://backend-7vs3.onrender.com/api/residential/pgmain/${propertyId}`);
 
     if (response.data.success) {
       setPgs(prev => prev.filter(pg => pg.propertyId !== propertyId));

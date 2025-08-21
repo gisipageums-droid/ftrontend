@@ -585,7 +585,7 @@ const SellShowroomMain = () => {
         };
 
         console.log(transformedData);
-        const response = await axios.post('/api/commercial/sell/showrooms', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/showrooms', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

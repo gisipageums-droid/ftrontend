@@ -11,7 +11,7 @@ function Plans() {
 
   const fetchTokenPrice = async () => {
     try {
-      const response = await fetch(`/api/tokens?nocache=${Date.now()}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/tokens?nocache=${Date.now()}`, {
         method: "GET",
         headers: {
           "Cache-Control": "no-cache",
@@ -34,7 +34,7 @@ function Plans() {
     if (!userId) return;
 
     try {
-      const response = await fetch(`/api/payment/user/${userId}?nocache=${Date.now()}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/payment/user/${userId}?nocache=${Date.now()}`, {
         method: "GET",
         headers: {
           "Cache-Control": "no-cache",
@@ -84,7 +84,7 @@ function Plans() {
     setLoading(true);
 
     try {
-      const orderRes = await fetch("/api/payment/create-order", {
+      const orderRes = await fetch("https://backend-7vs3.onrender.com/api/payment/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount: amountInPaise }),
@@ -114,7 +114,7 @@ function Plans() {
           };
 
           // 1. Save payment
-          const saveRes = await fetch("/api/payment/save-payment", {
+          const saveRes = await fetch("https://backend-7vs3.onrender.com/api/payment/save-payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentDetails),
@@ -128,7 +128,7 @@ function Plans() {
 
           // 2. Add tokens to user
           try {
-            const tokenAddRes = await fetch("/api/usertoken/add", {
+            const tokenAddRes = await fetch("https://backend-7vs3.onrender.com/api/usertoken/add", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({

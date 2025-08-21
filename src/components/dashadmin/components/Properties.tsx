@@ -31,7 +31,7 @@ export default function Properties() {
 
   const fetchProperties = async () => {
     try {
-      const response = await axios.get('/api/allproperties/all', {
+      const response = await axios.get('https://backend-7vs3.onrender.com/api/allproperties/all', {
   headers: {
     'Cache-Control': 'no-cache',
     'Pragma': 'no-cache',
@@ -158,7 +158,7 @@ export default function Properties() {
     }
 
     axios
-      .delete(`/api/properties/${category}/${listing}/${type}/${propertyId}`)
+      .delete(`https://backend-7vs3.onrender.com/api/properties/${category}/${listing}/${type}/${propertyId}`)
       .then(() => {
         toast.success('Property deleted successfully');
         setProperties(l => l.filter(x => x.propertyId !== propertyId));
@@ -188,7 +188,7 @@ export default function Properties() {
     };
 
     try {
-      await axios.post('/api/lead-token', payload);
+      await axios.post('https://backend-7vs3.onrender.com/api/lead-token', payload);
       toast.success('Lead token assigned successfully');
       setIsAssignModalOpen(false);
     } catch (error) {

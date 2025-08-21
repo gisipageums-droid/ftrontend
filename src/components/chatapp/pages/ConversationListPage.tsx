@@ -90,7 +90,7 @@ const ConversationListPage: React.FC = () => {
   useEffect(() => {
     const fetchConversations = async () => {
       try {
-        const response = await fetch(`/api/conversation?userId=${userId}`, {
+        const response = await fetch(`https://backend-7vs3.onrender.com/api/conversation?userId=${userId}`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
             "Content-Type": "application/json",
@@ -187,7 +187,7 @@ const ConversationListPage: React.FC = () => {
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={conv.avatar || `https://ui-avatars.com/api/?name=${displayName}&background=random`}
+                    src={conv.avatar || `https://ui-avatars.comhttps://backend-7vs3.onrender.com/api/?name=${displayName}&background=random`}
                     alt={displayName}
                     className="w-12 h-12 rounded-full object-cover"
                   />
@@ -241,7 +241,7 @@ const ConversationListPage: React.FC = () => {
                   if (!selectedConversation || !isButtonEnabled) return;
 
                   try {
-                    const response = await fetch(`/api/conversation/${selectedConversation._id}/status`, {
+                    const response = await fetch(`https://backend-7vs3.onrender.com/api/conversation/${selectedConversation._id}/status`, {
                       method: "PUT",
                       headers: {
                         "Content-Type": "application/json",

@@ -315,7 +315,7 @@ const SellShopMain = () => {
 
   // Reverse geocode to get address from coordinates
   // const reverseGeocode = (lat: string, lng: string) => {
-  //   const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
+  //   const geocodingUrl = `https://maps.googleapis.com/mapshttps://backend-7vs3.onrender.com/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
 
   //   fetch(geocodingUrl)
   //     .then(response => response.json())
@@ -688,11 +688,11 @@ const SellShopMain = () => {
       };
 
       console.log("Sending request to backend...");
-      console.log("Request endpoint:", '/api/commercial/sell/shops');
+      console.log("Request endpoint:", 'https://backend-7vs3.onrender.com/api/commercial/sell/shops');
 
       // Send the data to the backend
-      ///api/commercial/sell/shops
-      const response = await axios.post('http://localhost:8000/api/commercial/sell/shops', transformedData, {
+      //https://backend-7vs3.onrender.com/api/commercial/sell/shops
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/shops', transformedData, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -794,7 +794,7 @@ const SellShopMain = () => {
       const token = userData.token;
 
       // Test request to the API
-      const response = await axios.get('/api/commercial/sell/shops', {
+      const response = await axios.get('https://backend-7vs3.onrender.com/api/commercial/sell/shops', {
         headers: {
           'Authorization': `Bearer ${token}`
         }

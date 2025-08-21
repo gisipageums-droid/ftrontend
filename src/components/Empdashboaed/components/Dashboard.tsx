@@ -68,8 +68,8 @@ const Dashboard: React.FC<DashboardProps> = ({ stats }) => {
 
         // Determine which API endpoint to use based on user role
         const apiUrl = userData.role === 'employee' 
-          ? `/api/employee/${userData.id}`
-          : `/api/user/${userData.id}`;
+          ? `https://backend-7vs3.onrender.com/api/employee/${userData.id}`
+          : `https://backend-7vs3.onrender.com/api/user/${userData.id}`;
 
         try {
           const response = await fetch(apiUrl, {

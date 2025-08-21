@@ -829,7 +829,7 @@ const PlotManagement: React.FC = () => {
     const fetchPropertyDetails = async () => {
 
       try {
-        const response = await axios.get(`/api/${category}/${listing}/${type}/${propertyId}`);
+        const response = await axios.get(`https://backend-7vs3.onrender.com/api/${category}/${listing}/${type}/${propertyId}`);
         console.log(response);
         setProperty(response.data.data);
         setRentplotproperty(response.data.data);

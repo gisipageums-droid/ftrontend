@@ -121,7 +121,7 @@ const HomePage = () => {
     .slice(0, 3); // Get the top 3 blogs
 
   const fetchBlogs = async () => {
-    const response = await axios.get("/api/blog/");
+    const response = await axios.get("https://backend-7vs3.onrender.com/api/blog/");
     // console.log(response.data)
 
     if (response.data.success) {

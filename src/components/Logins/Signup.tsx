@@ -58,7 +58,7 @@
 //       setLoading(true);
 //       setError(null);
 
-//       const response = await fetch('/api/sign/send-otp', {
+//       const response = await fetch('https://backend-7vs3.onrender.com/api/sign/send-otp', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({ email: formData.email }),
@@ -84,7 +84,7 @@
 //       setLoading(true);
 //       setError(null);
 
-//       const response = await fetch('/api/sign/verify-otp', {
+//       const response = await fetch('https://backend-7vs3.onrender.com/api/sign/verify-otp', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({ email: formData.email, otp }),
@@ -128,7 +128,7 @@
 //     setSuccess(false);
 
 //     try {
-//       const response = await fetch('/api/sign/register', {
+//       const response = await fetch('https://backend-7vs3.onrender.com/api/sign/register', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({ ...formData, emailVerified: true }),
@@ -501,7 +501,7 @@ function Signup({ onSwitchToLogin }: SignupProps) {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("/api/sign/send-otp", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/sign/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: formData.email }),
@@ -524,7 +524,7 @@ function Signup({ onSwitchToLogin }: SignupProps) {
       setLoading(true);
       setError(null);
 
-      const response = await fetch("/api/sign/verify-otp", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/sign/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: formData.email, otp }),
@@ -563,7 +563,7 @@ function Signup({ onSwitchToLogin }: SignupProps) {
     setSuccess(false);
 
     try {
-      const response = await fetch("/api/sign/register", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/sign/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, emailVerified: true }),

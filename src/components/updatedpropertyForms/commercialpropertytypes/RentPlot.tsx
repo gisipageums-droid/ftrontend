@@ -574,7 +574,7 @@ const RentPlot = () => {
           }
         };
 
-        const response = await axios.post('/api/commercial/rent/plots', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/rent/plots', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

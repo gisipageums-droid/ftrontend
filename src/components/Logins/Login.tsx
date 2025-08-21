@@ -55,7 +55,7 @@ function Login({ onSwitchToSignup, onLoginSuccess }: LoginProps) {
     try {
       console.log("Google Credential Response:", credentialResponse);
 
-      const response = await axios.post("/api/loginuser/google", {
+      const response = await axios.post("https://backend-7vs3.onrender.com/api/loginuser/google", {
         credential: credentialResponse.credential,
       });
 
@@ -109,7 +109,7 @@ function Login({ onSwitchToSignup, onLoginSuccess }: LoginProps) {
     setError(null);
 
     try {
-      const response = await axios.post("/api/loginuser/login", formData);
+      const response = await axios.post("https://backend-7vs3.onrender.com/api/loginuser/login", formData);
       const userData = response.data;
 
       // ✅ Store full user details in sessionStorage

@@ -41,7 +41,7 @@ const StatisticsSection: React.FC = () => {
 
         if (user) {
           const author = JSON.parse(user).id;
-          const response = await axios.get(`/api/stats/${author}`);
+          const response = await axios.get(`https://backend-7vs3.onrender.com/api/stats/${author}`);
 
           setStats(response.data); // Store the fetched data
           // console.log(stats)

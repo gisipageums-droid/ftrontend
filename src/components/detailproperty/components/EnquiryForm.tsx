@@ -72,7 +72,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       updatedAt: formData.updatedAt,
     };
 
-    const response = await axios.post('/api/enquiry/submit', transformedData, {
+    const response = await axios.post('https://backend-7vs3.onrender.com/api/enquiry/submit', transformedData, {
       headers: {
         'Content-Type': 'application/json'
       }

@@ -20,7 +20,7 @@ const Revenue = () => {
   const fetchTokens = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/tokens");
+      const response = await fetch("https://backend-7vs3.onrender.com/api/tokens");
       const data = await response.json();
       if (Array.isArray(data) && data.length > 0) {
         setTokenPackage(data[0]); // Use the first available package

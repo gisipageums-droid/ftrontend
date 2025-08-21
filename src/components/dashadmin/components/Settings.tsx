@@ -117,7 +117,7 @@ const Settings = () => {
     }
 
     try {
-      await axios.put(`/api/sign/user/update-password/${userData.id}`, {
+      await axios.put(`https://backend-7vs3.onrender.com/api/sign/user/update-password/${userData.id}`, {
         currentPassword: userData.currentPassword,
         newPassword: userData.newPassword,
       });

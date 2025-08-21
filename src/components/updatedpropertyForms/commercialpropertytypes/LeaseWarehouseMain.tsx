@@ -622,7 +622,7 @@ const LeaseWarehouseMain = () => {
 
       // Make API call to create commercial lease warehouse
       const response = await axios.post(
-        `/api/commercial/lease/warehouses`,
+        `https://backend-7vs3.onrender.com/api/commercial/lease/warehouses`,
         backendData,
         {
           headers: {

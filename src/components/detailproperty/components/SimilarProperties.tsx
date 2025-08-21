@@ -131,7 +131,7 @@ export const SimilarProperties: React.FC<{ propertyType: string }> = ({ property
     const fetchRecentProperties = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/allproperties/all');
+        const response = await axios.get('https://backend-7vs3.onrender.com/api/allproperties/all');
         
         // Flatten the grouped properties
         const flattenGrouped = (grouped: Record<string, any>): Property[] => {

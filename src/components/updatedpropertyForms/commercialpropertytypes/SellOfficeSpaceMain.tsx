@@ -517,7 +517,7 @@ const SellOfficeSpaceMain = () => {
       };
 
       // Send data to API
-      const response = await axios.post('/api/commercial/sell/office-space', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/office-space', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }

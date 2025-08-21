@@ -131,11 +131,11 @@ const Employees = () => {
       return;
     }
 
-    console.log("🔄 PUT Request to:", `/api/employees/${editingEmployee.id}`);
+    console.log("🔄 PUT Request to:", `https://backend-7vs3.onrender.com/api/employees/${editingEmployee.id}`);
     console.log("🔄 Payload Data:", updatedFields);
 
     try {
-      const response = await fetch(`/api/employees/${editingEmployee.id}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/employees/${editingEmployee.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -173,7 +173,7 @@ const Employees = () => {
     console.log("🗑 Deleting Employee ID:", id); // ✅ Debugging log
 
     try {
-      const response = await fetch(`/api/employees/${id}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/employees/${id}`, {
         method: "DELETE",
       });
 
@@ -221,7 +221,7 @@ const Employees = () => {
     console.log("Submitting Payload:", payload); // Debugging log
 
     try {
-      const response = await fetch("/api/employees", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/employees", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -247,7 +247,7 @@ const Employees = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await fetch("/api/employees");
+        const response = await fetch("https://backend-7vs3.onrender.com/api/employees");
         const data = await response.json();
 
         if (data.success) {

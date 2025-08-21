@@ -362,7 +362,7 @@ const Homepage: React.FC = () => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("/api/blog/");
+        const response = await axios.get("https://backend-7vs3.onrender.com/api/blog/");
         if (response.data.success) {
           setAllBlogs(response.data.data);
         }
@@ -627,7 +627,7 @@ const Homepage: React.FC = () => {
                 quote="Propamigo made finding my dream apartment so easy! The search tools are intuitive and the customer service is exceptional."
                 author="Sarah Johnson"
                 role="Tenant"
-                image="https://randomuser.me/api/portraits/women/12.jpg"
+                image="https://randomuser.mehttps://backend-7vs3.onrender.com/api/portraits/women/12.jpg"
               />
             </motion.div>
 
@@ -641,7 +641,7 @@ const Homepage: React.FC = () => {
                 quote="As a property owner, I've had great success listing my properties on Propamigo. The platform is user-friendly and attracts quality tenants."
                 author="Michael Chen"
                 role="Property Owner"
-                image="https://randomuser.me/api/portraits/men/32.jpg"
+                image="https://randomuser.mehttps://backend-7vs3.onrender.com/api/portraits/men/32.jpg"
               />
             </motion.div>
 
@@ -655,7 +655,7 @@ const Homepage: React.FC = () => {
                 quote="The virtual tours feature saved me so much time. I was able to narrow down my options before physically visiting properties."
                 author="Emily Rodriguez"
                 role="Tenant"
-                image="https://randomuser.me/api/portraits/women/28.jpg"
+                image="https://randomuser.mehttps://backend-7vs3.onrender.com/api/portraits/women/28.jpg"
               />
             </motion.div>
           </div>

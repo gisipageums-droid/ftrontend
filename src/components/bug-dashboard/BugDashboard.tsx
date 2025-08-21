@@ -82,7 +82,7 @@ const BugDashboard = () => {
   const loadBugs = async () => {
     setIsRefreshing(true)
     try {
-      const response = await axios.get(`/api/bug/list`)
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/bug/list`)
       if (response.data.success) {
         // console.log(response.data.data)
         const allBugs = response.data.data
@@ -116,12 +116,12 @@ const BugDashboard = () => {
   const handleAcceptBug = async (bug: Bugs) => {
     try {
       // Use the dedicated accept endpoint that includes email notification
-      const response = await axios.put(`/api/bug/${bug._id}/accept`, {
+      const response = await axios.put(`https://backend-7vs3.onrender.com/api/bug/${bug._id}/accept`, {
         isaccepted: true,
       })
 
       // Also update the status to "in-progress" using the edit endpoint
-      await axios.put(`/api/bug/${bug._id}/edit`, {
+      await axios.put(`https://backend-7vs3.onrender.com/api/bug/${bug._id}/edit`, {
         status: "in-progress",
       })
 
@@ -263,7 +263,7 @@ const BugDashboard = () => {
     console.log(selectedReport)
 
     try {
-      const response = await axios.put(`/api/bug/${report._id}/edit`, { status: newStatus })
+      const response = await axios.put(`https://backend-7vs3.onrender.com/api/bug/${report._id}/edit`, { status: newStatus })
 
       if (response.data.success) {
         toast.success(response.data.message)

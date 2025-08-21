@@ -37,7 +37,7 @@ const ChatPage: React.FC = () => {
       try {
         setLoading(true);
 
-        let response = await fetch(`/api/user/${otherUserId}`, {
+        let response = await fetch(`https://backend-7vs3.onrender.com/api/user/${otherUserId}`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
             "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const ChatPage: React.FC = () => {
         let data = await response.json();
 
         if (!response.ok || !data.user) {
-          response = await fetch(`/api/employees/${otherUserId}`, {
+          response = await fetch(`https://backend-7vs3.onrender.com/api/employees/${otherUserId}`, {
             headers: {
               Authorization: `Bearer ${sessionStorage.getItem("token")}`,
               "Content-Type": "application/json",
@@ -189,7 +189,7 @@ const ChatPage: React.FC = () => {
           }}
         >
           <img
-            src={`https://ui-avatars.com/api/?name=${displayName}&background=random`}
+            src={`https://ui-avatars.comhttps://backend-7vs3.onrender.com/api/?name=${displayName}&background=random`}
             alt={displayName}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />

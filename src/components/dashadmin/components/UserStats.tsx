@@ -78,7 +78,7 @@ const UserStats = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/sign/users');
+        const response = await axios.get('https://backend-7vs3.onrender.com/api/sign/users');
         console.log('API Response:', response); 
         setUsers( Array.isArray(response.data)
         ? response.data

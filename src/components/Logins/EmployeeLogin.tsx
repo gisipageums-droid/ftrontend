@@ -49,7 +49,7 @@ function EmployeeLogin({ onSwitchToSignup, onLoginSuccess }: LoginProps) {
     try {
       console.log("Google Credential Response:", credentialResponse);
 
-      const response = await axios.post("/api/loginuser/google", {
+      const response = await axios.post("https://backend-7vs3.onrender.com/api/loginuser/google", {
         credential: credentialResponse.credential,
       });
 
@@ -103,7 +103,7 @@ function EmployeeLogin({ onSwitchToSignup, onLoginSuccess }: LoginProps) {
     setError(null);
 
     try {
-      const response = await axios.post("/api/loginuser/emp-login", formData);
+      const response = await axios.post("https://backend-7vs3.onrender.com/api/loginuser/emp-login", formData);
       const userData = response.data;
       console.log(userData);
       // ✅ Store full user details in sessionStorage

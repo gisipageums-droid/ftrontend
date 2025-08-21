@@ -73,7 +73,7 @@ const Analytics = () => {
   const fetchRevenueData = async () => {
     try {
       console.log("Fetching data with filter:", revenueFilter); // Debugging log
-      const response = await axios.get(`/api/payment/revenue-by-date?filter=${revenueFilter}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/payment/revenue-by-date?filter=${revenueFilter}`);
       const data = response.data;
 
       console.log("API Response:", data); // Check the response data

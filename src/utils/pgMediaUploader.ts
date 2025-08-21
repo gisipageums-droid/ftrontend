@@ -65,7 +65,7 @@ export const uploadPgMediaToS3 = async (
     const attemptUpload = async (retries = 2): Promise<any> => {
       try {
         return await axios.post(
-          '/api/residential/pg-media/upload',
+          'https://backend-7vs3.onrender.com/api/residential/pg-media/upload',
           formData,
           {
             headers: {
@@ -107,7 +107,7 @@ export const deletePgMediaFromS3 = async (
   mediaId: string
 ): Promise<boolean> => {
   try {
-    const response = await axios.delete(`/api/residential/pg-media/${propertyId}/${mediaId}`);
+    const response = await axios.delete(`https://backend-7vs3.onrender.com/api/residential/pg-media/${propertyId}/${mediaId}`);
     return response.data.success;
   } catch (error: any) {
     console.error('Error deleting PG media:', error);
@@ -124,7 +124,7 @@ export const getPgMediaFromS3 = async (
   propertyId: string
 ): Promise<any> => {
   try {
-    const response = await axios.get(`/api/residential/pg-media/${propertyId}`);
+    const response = await axios.get(`https://backend-7vs3.onrender.com/api/residential/pg-media/${propertyId}`);
 
     if (response.data.success) {
       return response.data.data;

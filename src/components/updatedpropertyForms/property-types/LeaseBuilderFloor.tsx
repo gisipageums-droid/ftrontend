@@ -1384,7 +1384,7 @@ const LeaseBuilderFloor: React.FC<LeaseBuilderFloorProps> = ({ propertyId: initi
             };
 
             // Send the updated form data to the backend
-            const response = await axios.post('/api/residential/lease/builderfloor', {
+            const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/lease/builderfloor', {
               ...updatedFormData,
               metadata: {
                 createdBy: author,
@@ -1409,7 +1409,7 @@ const LeaseBuilderFloor: React.FC<LeaseBuilderFloorProps> = ({ propertyId: initi
         }
       } else {
         // If no media to upload, just send the form data
-        const response = await axios.post('/api/residential/lease/builderfloor', {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/lease/builderfloor', {
           ...formData,
           metadata: {
             createdBy: author,

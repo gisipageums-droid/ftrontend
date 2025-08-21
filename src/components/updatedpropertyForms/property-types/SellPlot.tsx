@@ -868,7 +868,7 @@ const SellPlot = () => {
 
       console.log("Submitting data:", transformedData);
 
-      const response = await axios.post('/api/residential/sale/plots', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/sale/plots', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }

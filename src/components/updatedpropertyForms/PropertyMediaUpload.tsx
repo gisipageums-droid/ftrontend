@@ -667,7 +667,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
         fileSize: file.size
       });
 
-      const response = await axios.post('/api/property-media/upload', formData);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/property-media/upload', formData);
 
       if (response.data.success) {
         const media = response.data.data.media;
@@ -762,7 +762,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
         fileSize: file.size
       });
 
-      const response = await axios.post('/api/property-media/upload', formData);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/property-media/upload', formData);
 
       if (response.data.success) {
         const media = response.data.data.media;
@@ -839,7 +839,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
         formData.append('propertyId', propertyId);
       }
 
-      const response = await axios.post('/api/property-media/upload', formData);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/property-media/upload', formData);
 
       if (response.data.success) {
         const media = response.data.data.media;
@@ -889,7 +889,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
     if (propertyId) {
       try {
         const encodedUrl = encodeURIComponent(photoUrl);
-        await axios.delete(`/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
+        await axios.delete(`https://backend-7vs3.onrender.com/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
       } catch (error) {
         console.error('Error deleting photo from server:', error);
         setError('Failed to delete photo. Please try again.');
@@ -935,7 +935,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
     if (propertyId && videoUrl) {
       try {
         const encodedUrl = encodeURIComponent(videoUrl);
-        await axios.delete(`/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
+        await axios.delete(`https://backend-7vs3.onrender.com/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
       } catch (error) {
         console.error('Error deleting video from server:', error);
         setError('Failed to delete video. Please try again.');
@@ -965,7 +965,7 @@ const PropertyMediaUpload: React.FC<PropertyMediaUploadProps> = ({
     if (propertyId) {
       try {
         const encodedUrl = encodeURIComponent(docUrl);
-        await axios.delete(`/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
+        await axios.delete(`https://backend-7vs3.onrender.com/api/property-media/${propertyType}/${propertyId}/${encodedUrl}`);
       } catch (error) {
         console.error('Error deleting document from server:', error);
         setError('Failed to delete document. Please try again.');

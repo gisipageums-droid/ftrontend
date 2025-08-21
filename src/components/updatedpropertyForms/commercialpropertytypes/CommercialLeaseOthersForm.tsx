@@ -571,7 +571,7 @@ const CommercialLeaseOthersForm = () => {
       };
       
       // Submit the form data to backend API
-      const response = await axios.post('/api/commercial/lease/others', submissionData);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/lease/others', submissionData);
       
       if (response.data.success) {
         toast.success("Property listed successfully!");

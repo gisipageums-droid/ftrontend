@@ -709,7 +709,7 @@ const RentShed = () => {
           }
         };
 
-        const response = await axios.post('/api/commercial/rent/sheds', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/rent/sheds', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

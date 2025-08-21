@@ -544,7 +544,7 @@ const SellOthersMain = () => {
       };
 
       // Send data to API
-      const response = await axios.post('/api/commercial/sell/others', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/others', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }

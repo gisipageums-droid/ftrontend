@@ -72,7 +72,7 @@ const MapLocation: React.FC<MapLocationProps> = ({
     };
 
     const reverseGeocode = (lat: string, lng: string) => {
-        const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
+        const geocodingUrl = `https://maps.googleapis.com/mapshttps://backend-7vs3.onrender.com/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
         fetch(geocodingUrl)
             .then(response => response.json())
             .then(data => {

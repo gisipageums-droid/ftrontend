@@ -686,7 +686,7 @@ const SellRetailShopMain = () => {
       };
 
       // Use the same format as in the backend routes configuration
-      const API_ENDPOINT = '/api/commercial/sell/retail-store';
+      const API_ENDPOINT = 'https://backend-7vs3.onrender.com/api/commercial/sell/retail-store';
       console.log(`About to send API request to ${API_ENDPOINT}`);
       console.log('Request headers:', {
         'Content-Type': 'application/json',

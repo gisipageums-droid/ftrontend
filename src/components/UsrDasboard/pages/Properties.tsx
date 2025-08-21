@@ -70,7 +70,7 @@ export function Properties() {
           throw new Error("User ID not found in session");
         }
         
-        const apiUrl = "/api/allproperties/all";
+        const apiUrl = "https://backend-7vs3.onrender.com/api/allproperties/all";
         
         const headers = {
           'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ export function Properties() {
   const handleDelete = useCallback(async (id: string) => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       try {
-        await axios.delete(`/api/properties/${id}`);
+        await axios.delete(`https://backend-7vs3.onrender.com/api/properties/${id}`);
         setProperties(prev => prev.filter(p => p.id !== id));
       } catch (error) {
         console.error("Error deleting property:", error);

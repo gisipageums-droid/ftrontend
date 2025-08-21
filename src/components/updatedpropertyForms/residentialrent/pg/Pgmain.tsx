@@ -298,7 +298,7 @@ useEffect(() => {
   const fetchPGDataForEdit = async () => {
     if (routePropertyId) {
       try {
-        const response = await axios.get(`/api/residential/pgmain/${routePropertyId}`);
+        const response = await axios.get(`https://backend-7vs3.onrender.com/api/residential/pgmain/${routePropertyId}`);
         const data = response.data?.data; // ✅ Only the actual PG form data object
         setFormData(data);
         setPropertyId(routePropertyId);
@@ -527,13 +527,13 @@ useEffect(() => {
      let response;
 if (propertyId) {
   // EDIT MODE
-  response = await axios.patch(`/api/residential/pgmain/${propertyId}`, payload, {
+  response = await axios.patch(`https://backend-7vs3.onrender.com/api/residential/pgmain/${propertyId}`, payload, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
   toast.success('PG listing updated!');
 } else {
   // CREATE MODE
-  response = await axios.post('/api/residential/pgmain', payload, {
+  response = await axios.post('https://backend-7vs3.onrender.com/api/residential/pgmain', payload, {
     headers: token ? { Authorization: `Bearer ${token}` } : {},
   });
   toast.success('PG listing created!');

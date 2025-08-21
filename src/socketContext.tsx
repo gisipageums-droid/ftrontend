@@ -3,7 +3,7 @@ import { io, Socket } from "socket.io-client";
 
 // Create a single socket connection to the backend.
 // Ensure the URL matches your backend server (port 5003 in this case).
-const socket = io("http://localhost:8000", {
+const socket = io("", {
   path: "/socket.io",
 });
 

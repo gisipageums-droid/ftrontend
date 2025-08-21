@@ -9,7 +9,7 @@ const PurchaseTokens = () => {
 
     try {
       // Request your backend to create an order
-      const response = await fetch("/api/payment/create-order", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/payment/create-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -102,7 +102,7 @@ export const uploadPropertyMediaToS3 = async (
     const attemptUpload = async (retries = 2): Promise<any> => {
       try {
         return await axios.post(
-          '/api/property-media/upload',
+          'https://backend-7vs3.onrender.com/api/property-media/upload',
           formData,
           {
             headers: {
@@ -207,7 +207,7 @@ export const deletePropertyMediaFromS3 = async (
   mediaId: string
 ): Promise<boolean> => {
   try {
-    const response = await axios.delete(`/api/property-media/${propertyType}/${propertyId}/${mediaId}`);
+    const response = await axios.delete(`https://backend-7vs3.onrender.com/api/property-media/${propertyType}/${propertyId}/${mediaId}`);
     
     return response.data.success;
   } catch (error: any) {
@@ -227,7 +227,7 @@ export const getPropertyMediaFromS3 = async (
   propertyType: string
 ): Promise<any> => {
   try {
-    const response = await axios.get(`/api/property-media/${propertyType}/${propertyId}`);
+    const response = await axios.get(`https://backend-7vs3.onrender.com/api/property-media/${propertyType}/${propertyId}`);
     
     if (response.data.success) {
       return response.data.data;

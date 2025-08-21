@@ -37,7 +37,7 @@ function ForgotPassword({ onBack }: ForgotPasswordProps) {
     setError(null);
 
     try {
-      const response = await fetch("/api/forgot-password", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ function ForgotPassword({ onBack }: ForgotPasswordProps) {
 
     try {
       const otpString = otp.join("");
-      const response = await fetch("/api/verify-otp", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/verify-otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function ForgotPassword({ onBack }: ForgotPasswordProps) {
     setError(null);
 
     try {
-      const response = await fetch("/api/reset-password", {
+      const response = await fetch("https://backend-7vs3.onrender.com/api/reset-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

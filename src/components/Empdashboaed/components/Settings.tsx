@@ -81,7 +81,7 @@ const Settings: React.FC = () => {
       }
 
       try {
-        const response = await fetch(`/api/sign/employee/${userId}`);
+        const response = await fetch(`https://backend-7vs3.onrender.com/api/sign/employee/${userId}`);
         const data = await response.json();
 
         if (response.ok) {
@@ -147,7 +147,7 @@ const Settings: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`/api/sign/employee/update/${userId}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/sign/employee/update/${userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -223,7 +223,7 @@ const Settings: React.FC = () => {
 
     try {
       const response = await fetch(
-        `/api/sign/employee/update-password/${userId}`,
+        `https://backend-7vs3.onrender.com/api/sign/employee/update-password/${userId}`,
         {
           method: "PUT",
           headers: {

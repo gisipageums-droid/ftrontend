@@ -83,7 +83,7 @@ const BlogDetail: React.FC = () => {
     const fetchBlog = async () => {
       if (id) {
         try {
-          const response = await axios.get(`http://localhost:8000/api/blog/${id}`)
+          const response = await axios.get(`https://backend-7vs3.onrender.com/api/blog/${id}`)
           if (response.data.success) {
             const blog = response.data.blog;
             let userHasLiked = false;
@@ -91,7 +91,7 @@ const BlogDetail: React.FC = () => {
             const user = sessionStorage.getItem("user")
             if (user) {
               const owner = JSON.parse(user).id
-              const res = await axios.get(`http://localhost:8000/api/likes/${id}/liked/${owner}`)
+              const res = await axios.get(`https://backend-7vs3.onrender.com/api/likes/${id}/liked/${owner}`)
 
               if (res.data.success) {
                 userHasLiked = res.data.liked
@@ -100,7 +100,7 @@ const BlogDetail: React.FC = () => {
               // Check likes for comments and reviews
               const commentsWithLikes = await Promise.all(
                 blog.comments.map(async (comment: Comment) => {
-                  const likeRes = await axios.get(`http://localhost:8000/api/comments/${comment._id}/liked/${owner}`)
+                  const likeRes = await axios.get(`https://backend-7vs3.onrender.com/api/comments/${comment._id}/liked/${owner}`)
                   return {
                     ...comment,
                     userHasLiked: likeRes.data.liked,
@@ -110,7 +110,7 @@ const BlogDetail: React.FC = () => {
 
               const reviewsWithLikes = await Promise.all(
                 blog.reviews.map(async (review: Review) => {
-                  const likeRes = await axios.get(`http://localhost:8000/api/reviews/${review._id}/liked/${owner}`)
+                  const likeRes = await axios.get(`https://backend-7vs3.onrender.com/api/reviews/${review._id}/liked/${owner}`)
                   return {
                     ...review,
                     userHasLiked: likeRes.data.liked,
@@ -148,7 +148,7 @@ const BlogDetail: React.FC = () => {
         const user = sessionStorage.getItem("user")
         if (user) {
           const owner = JSON.parse(user).id
-          const response = await axios.post(`http://localhost:8000/api/likes/${id}`, { userId: owner })
+          const response = await axios.post(`https://backend-7vs3.onrender.com/api/likes/${id}`, { userId: owner })
           if (response.data.success) {
             if (post) {
               setPost({
@@ -171,7 +171,7 @@ const BlogDetail: React.FC = () => {
         const user = sessionStorage.getItem("user")
         if (user) {
           const owner = JSON.parse(user).id
-          const response = await axios.delete(`http://localhost:8000/api/likes/${id}/${owner}`)
+          const response = await axios.delete(`https://backend-7vs3.onrender.com/api/likes/${id}/${owner}`)
           if (response.data.success) {
             if (post) {
               setPost({
@@ -200,7 +200,7 @@ const BlogDetail: React.FC = () => {
       const comment = comments.find((c) => c._id === commentId)
 
       if (comment?.userHasLiked) {
-        const response = await axios.delete(`http://localhost:8000/api/comments/${commentId}/likes/${owner}`)
+        const response = await axios.delete(`https://backend-7vs3.onrender.com/api/comments/${commentId}/likes/${owner}`)
         if (response.data.success) {
           setComments(
             comments.map((c) =>
@@ -209,7 +209,7 @@ const BlogDetail: React.FC = () => {
           )
         }
       } else {
-        const response = await axios.post(`http://localhost:8000/api/comments/${commentId}/likes`, { userId: owner })
+        const response = await axios.post(`https://backend-7vs3.onrender.com/api/comments/${commentId}/likes`, { userId: owner })
         if (response.data.success) {
           setComments(
             comments.map((c) => (c._id === commentId ? { ...c, likes: [...c.likes, owner], userHasLiked: true } : c)),
@@ -233,7 +233,7 @@ const BlogDetail: React.FC = () => {
       const review = reviews.find((r) => r._id === reviewId)
 
       if (review?.userHasLiked) {
-        const response = await axios.delete(`http://localhost:8000/api/reviews/${reviewId}/likes/${owner}`)
+        const response = await axios.delete(`https://backend-7vs3.onrender.com/api/reviews/${reviewId}/likes/${owner}`)
         if (response.data.success) {
           setReviews(
             reviews.map((r) =>
@@ -242,7 +242,7 @@ const BlogDetail: React.FC = () => {
           )
         }
       } else {
-        const response = await axios.post(`http://localhost:8000/api/reviews/${reviewId}/likes`, { userId: owner })
+        const response = await axios.post(`https://backend-7vs3.onrender.com/api/reviews/${reviewId}/likes`, { userId: owner })
         if (response.data.success) {
           setReviews(
             reviews.map((r) => (r._id === reviewId ? { ...r, likes: [...r.likes, owner], userHasLiked: true } : r)),
@@ -266,7 +266,7 @@ const BlogDetail: React.FC = () => {
           comment: newComment,
         }
 
-        const response = await axios.post(`http://localhost:8000/api/comments/${id}`, Comment)
+        const response = await axios.post(`https://backend-7vs3.onrender.com/api/comments/${id}`, Comment)
         if (response.data.success) {
           setNewComment("")
           setComments([...comments, { ...response.data.comment, likes: [], userHasLiked: false }])
@@ -305,7 +305,7 @@ const BlogDetail: React.FC = () => {
           rating: rating,
         }
 
-        const response = await axios.post(`http://localhost:8000/api/reviews/${id}`, Review)
+        const response = await axios.post(`https://backend-7vs3.onrender.com/api/reviews/${id}`, Review)
         if (response.data.success) {
           setNewReview("")
           setReviews([...reviews, { ...response.data.review, likes: [], userHasLiked: false }])
@@ -341,7 +341,7 @@ const BlogDetail: React.FC = () => {
 
       const author = JSON.parse(user).id
 
-      const response = await axios.delete(`http://localhost:8000/api/comments/${commentId}`, {
+      const response = await axios.delete(`https://backend-7vs3.onrender.com/api/comments/${commentId}`, {
         data: { author },
         headers: {
           "Content-Type": "application/json",
@@ -370,7 +370,7 @@ const BlogDetail: React.FC = () => {
 
       const author = JSON.parse(user).id
 
-      const response = await axios.delete(`http://localhost:8000/api/reviews/${reviewId}`, {
+      const response = await axios.delete(`https://backend-7vs3.onrender.com/api/reviews/${reviewId}`, {
         data: { author },
         headers: {
           "Content-Type": "application/json",
@@ -444,7 +444,7 @@ const BlogDetail: React.FC = () => {
 
       if (shared) {
         try {
-          const response = await axios.post(`http://localhost:8000/api/blog/${id}/share`)
+          const response = await axios.post(`https://backend-7vs3.onrender.com/api/blog/${id}/share`)
           if (response.data.success && post) {
             setPost({
               ...post,

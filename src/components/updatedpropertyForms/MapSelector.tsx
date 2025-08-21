@@ -48,7 +48,7 @@ const MapSelector: React.FC<MapSelectorProps> = ({ latitude, longitude, onLocati
 
       // Load Google Maps API if not already loaded
       const script = document.createElement("script")
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&libraries=places,geocoding`
+      script.src = `https://maps.googleapis.com/mapshttps://backend-7vs3.onrender.com/api/js?key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}&libraries=places,geocoding`
       script.async = true
       script.defer = true
       script.onload = () => {

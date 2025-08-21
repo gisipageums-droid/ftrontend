@@ -30,7 +30,7 @@ export default function EnquiryEdit() {
 
   const fetchEnquiry = async () => {
     try {
-      const response = await axios.get(`/api/enquiry/enquiry/${id}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/enquiry/enquiry/${id}`);
       setEnquiry(response.data.data);
     } catch (error) {
       toast.error('Failed to fetch enquiry');
@@ -45,7 +45,7 @@ export default function EnquiryEdit() {
     if (!enquiry) return;
 
     try {
-      await axios.put(`/api/enquiry/enquiry/${id}`, {
+      await axios.put(`https://backend-7vs3.onrender.com/api/enquiry/enquiry/${id}`, {
         name: enquiry.name,
         email: enquiry.email,
         phone: enquiry.phone,

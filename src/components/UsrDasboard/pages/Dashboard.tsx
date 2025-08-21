@@ -64,7 +64,7 @@ export function Dashboard() {
 
   // ✅ Fetch all properties and leads once
   useEffect(() => {
-    axios.get('/api/allproperties/all')
+    axios.get('https://backend-7vs3.onrender.com/api/allproperties/all')
       .then(res => {
         const props = res.data.data || [];
         console.log("Fetched all properties:", props);
@@ -72,7 +72,7 @@ export function Dashboard() {
       })
       .catch(err => console.error("Error fetching properties", err));
 
-    axios.get('/api/enquiry/enquiries')
+    axios.get('https://backend-7vs3.onrender.com/api/enquiry/enquiries')
       .then(res => {
         const leads = res.data.data || [];
         console.log("Fetched all leads:", leads);

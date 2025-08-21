@@ -35,7 +35,7 @@ const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
   const fetchPlans = useCallback(async () => {
     setLoading(true); // Set loading to true when fetching starts
     try {
-      const response = await fetch("/api/subscription");
+      const response = await fetch("https://backend-7vs3.onrender.com/api/subscription");
       if (!response.ok) throw new Error("Failed to fetch plans");
 
       const data = await response.json();

@@ -786,7 +786,7 @@ const LeaseShedMain = () => {
 
       // Using the correct API endpoint pattern based on other similar components
       // Looking at similar files, we'll use the plural form
-      const response = await axios.post('/api/commercial/lease/sheds', payload);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/lease/sheds', payload);
 
       if (response.status === 201) {
         toast.success('Property listed successfully!');

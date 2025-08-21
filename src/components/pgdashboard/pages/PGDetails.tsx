@@ -60,7 +60,7 @@ const PGDetails: React.FC = () => {
   useEffect(() => {
     const fetchPGDetails = async () => {
       try {
-        const response = await axios.get(`/api/residential/pgmain/${propertyId}`);
+        const response = await axios.get(`https://backend-7vs3.onrender.com/api/residential/pgmain/${propertyId}`);
         if (response.data.success) {
           setPg(response.data.data);  // Set the PG data
         } else {

@@ -44,8 +44,8 @@ useEffect(() => {
   const fetchAllProperties = async () => {
     try {
       const [propertyRes, tokenRes] = await Promise.all([
-        axios.get('/api/allproperties/all'),
-        axios.get('/api/lead-token'),
+        axios.get('https://backend-7vs3.onrender.com/api/allproperties/all'),
+        axios.get('https://backend-7vs3.onrender.com/api/lead-token'),
       ]);
 
       const grouped = propertyRes.data?.data || {};

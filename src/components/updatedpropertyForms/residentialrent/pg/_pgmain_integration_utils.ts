@@ -26,7 +26,7 @@
 //       }
 //     };
 //     // TODO: handle media upload if needed (base64 or URLs)
-//     await axios.post('/api/residential/pgmain', payload, {
+//     await axios.post('https://backend-7vs3.onrender.com/api/residential/pgmain', payload, {
 //       headers: token ? { Authorization: `Bearer ${token}` } : {},
 //     });
 //     toast.success('PG listing created!');

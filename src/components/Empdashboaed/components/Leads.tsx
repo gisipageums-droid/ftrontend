@@ -64,7 +64,7 @@ const Leads: React.FC = () => {
   const handleDelete = useCallback((id: string) => {
     if (!window.confirm('Delete this lead?')) return;
     axios
-      .delete(`/api/enquiry/enquirydel/${id}`)
+      .delete(`https://backend-7vs3.onrender.com/api/enquiry/enquirydel/${id}`)
       .then(() => {
         toast.success('Deleted');
         setLeads(l => l.filter(x => x.id !== id));
@@ -78,7 +78,7 @@ const Leads: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get('/api/enquiry/enquiries')
+      .get('https://backend-7vs3.onrender.com/api/enquiry/enquiries')
       .then(res => {
         const data: Lead[] = res.data.data.map((e: any) => ({
           id: e._id,
@@ -108,7 +108,7 @@ const Leads: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axios.post('/api/enquiry/enquiry', enquiryForm);
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/enquiry/enquiry', enquiryForm);
       if (response.data.success) {
         toast.success('Enquiry created successfully');
         setShowEnquiryModal(false);
@@ -122,7 +122,7 @@ const Leads: React.FC = () => {
           message: ''
         });
         // Refresh leads list
-        const res = await axios.get('/api/enquiry/enquiries');
+        const res = await axios.get('https://backend-7vs3.onrender.com/api/enquiry/enquiries');
         const data: Lead[] = res.data.data.map((e: any) => ({
           id: e._id,
           name: e.name,

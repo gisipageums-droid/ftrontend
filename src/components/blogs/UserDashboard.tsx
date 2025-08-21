@@ -88,7 +88,7 @@ const UserDashboard: React.FC = () => {
       const user = sessionStorage.getItem("user");
       if (user) {
         const userId = JSON.parse(user).id;
-        const response = await axios.get(`/api/user/${userId}`);
+        const response = await axios.get(`https://backend-7vs3.onrender.com/api/user/${userId}`);
         if (response.data.success) {
           // console.log(response.data.user)
           setUserdetails(response.data.user);
@@ -122,7 +122,7 @@ const UserDashboard: React.FC = () => {
       const user = sessionStorage.getItem("user");
       if (user) {
         const userId = JSON.parse(user).id;
-        const response = await axios.put(`/api/user/${userId}/edit`, {
+        const response = await axios.put(`https://backend-7vs3.onrender.com/api/user/${userId}/edit`, {
           editedUser,
         });
         if (response.data.success) {
@@ -170,7 +170,7 @@ const UserDashboard: React.FC = () => {
       }
       const author = JSON.parse(user).id;
 
-      const response = await axios.get(`/api/blog/myBlogs/${author}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/blog/myBlogs/${author}`);
       // console.log(response.data)
       setUserBlogs(response.data.blogs);
 
@@ -216,7 +216,7 @@ const UserDashboard: React.FC = () => {
 
         if (user) {
           const author = JSON.parse(user).id;
-          const response = await axios.get(`/api/stats/${author}`);
+          const response = await axios.get(`https://backend-7vs3.onrender.com/api/stats/${author}`);
 
           setStats(response.data); // Store the fetched data
           // console.log(stats)

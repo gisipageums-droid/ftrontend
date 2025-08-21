@@ -101,7 +101,7 @@ function Empapp() {
   useEffect(() => {
     const fetchTechEnquiries = async () => {
       try {
-        const response = await axios.get('/api/enquiry/tech-enquiries');
+        const response = await axios.get('https://backend-7vs3.onrender.com/api/enquiry/tech-enquiries');
         const techEnquiries = response.data?.enquiries || [];
 
         // Convert the data to match FormData interface

@@ -27,7 +27,7 @@ export const Properties: React.FC = () => {
 
   const fetchProperties = async () => {
     try {
-      const response = await axios.get('/api/allproperties/all');
+      const response = await axios.get('https://backend-7vs3.onrender.com/api/allproperties/all');
       const data = response.data;
       
       const allProperties = [
@@ -126,7 +126,7 @@ export const Properties: React.FC = () => {
     const listingSlug = listingType === 'RE' ? 'rent' : listingType === 'SA' ? 'sell' : 'lease';
 
     try {
-      const response = await axios.delete(`/api/${categorySlug}/${listingSlug}/${ptSlug}/${property.id}`);
+      const response = await axios.delete(`https://backend-7vs3.onrender.com/api/${categorySlug}/${listingSlug}/${ptSlug}/${property.id}`);
       console.log('Delete response:', response.data);
 
       if (response.data.success) {

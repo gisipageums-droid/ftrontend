@@ -595,7 +595,7 @@ const LeaseRetailStoreMain = () => {
 
         console.log('Sending data:', JSON.stringify(transformedData, null, 2));
 
-        const response = await axios.post('/api/commercial/lease/retail-store', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/lease/retail-store', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

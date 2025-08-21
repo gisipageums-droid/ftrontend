@@ -837,7 +837,7 @@ const SellBuilderFloor = ({ propertyId: initialPropertyId, onSubmit }: BuilderFl
         }
       };
 
-      const response = await axios.post('/api/residential/sale/builderfloor', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/sale/builderfloor', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }

@@ -844,7 +844,7 @@ const LeaseApartment: React.FC = () => {
         }
       };
 
-      const response = await axios.post('/api/residential/lease/apartment', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/residential/lease/apartment', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -872,7 +872,7 @@ const LeaseApartment: React.FC = () => {
         toast.error(errorMessage);
       } else if (error.request) {
         // The request was made but no response was received
-        toast.error("No response from server. Please check if the backend server is running at http://localhost:8000");
+        toast.error("No response from server. Please check if the backend server is running at ");
       } else {
         // Something happened in setting up the request that triggered an Error
         toast.error(error.message || "Failed to create apartment listing. Please try again.");

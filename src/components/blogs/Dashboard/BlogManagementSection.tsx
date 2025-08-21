@@ -90,7 +90,7 @@ const BlogManagementSection = () => {
       }
       const author = JSON.parse(user).id;
 
-      const response = await axios.get(`/api/blog/myBlogs/${author}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/blog/myBlogs/${author}`);
       console.log(response.data);
       setBlogs(response.data.blogs);
     } catch (error) {
@@ -134,7 +134,7 @@ const BlogManagementSection = () => {
     }
 
     try {
-      const response = await axios.delete(`/api/blog/delete/${id}`);
+      const response = await axios.delete(`https://backend-7vs3.onrender.com/api/blog/delete/${id}`);
       if (response.data.success) {
         toast.success("Blog deleted successfully!");
         // Refresh the blog list

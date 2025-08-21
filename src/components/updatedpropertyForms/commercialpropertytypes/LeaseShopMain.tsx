@@ -638,7 +638,7 @@ const LeaseShopMain = () => {
 
 
         console.log(transformedData);
-        const response = await axios.post('/api/commercial/lease/shops', transformedData, {
+        const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/lease/shops', transformedData, {
           headers: {
             'Content-Type': 'application/json'
           }

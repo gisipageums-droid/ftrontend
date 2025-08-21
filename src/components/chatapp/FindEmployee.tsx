@@ -20,7 +20,7 @@ const FindEmployee: React.FC = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("/api/employees");
+        const response = await axios.get("https://backend-7vs3.onrender.com/api/employees");
         setEmployees(response.data.data);
         setLoading(false);
       } catch (err) {
@@ -35,7 +35,7 @@ const FindEmployee: React.FC = () => {
   useEffect(() => {
     const fetchStatuses = async () => {
       try {
-        const response = await axios.get("/api/conversation/employee-status");
+        const response = await axios.get("https://backend-7vs3.onrender.com/api/conversation/employee-status");
         const map: Record<string, string> = {};
         response.data.forEach((entry: { employeeId: string; status: string }) => {
           map[entry.employeeId] = entry.status;

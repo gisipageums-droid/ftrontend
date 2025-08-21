@@ -56,7 +56,7 @@ const PropertyAddress: React.FC<PropertyAddressProps> = ({
 
   const reverseGeocode = async (lat: string, lng: string) => {
     try {
-      const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
+      const geocodingUrl = `https://maps.googleapis.com/mapshttps://backend-7vs3.onrender.com/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
       const response = await fetch(geocodingUrl);
       const data = await response.json();
 

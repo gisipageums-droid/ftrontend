@@ -226,7 +226,7 @@ const LeasePlotMain = () => {
 useEffect(() => {
   const fetchLeasePlotById = async () => {
     try {
-      const response = await axios.get(`/api/commercial/lease/plots/${propertyId}`);
+      const response = await axios.get(`https://backend-7vs3.onrender.com/api/commercial/lease/plots/${propertyId}`);
       const data = response.data;
 
       if (data && data.success) {
@@ -762,8 +762,8 @@ useEffect(() => {
     const isEditMode = !!formData.propertyId;
 
 const endpoint = isEditMode
-  ? `/api/commercial/lease/plots/${formData.propertyId}`
-  : '/api/commercial/lease/plots';
+  ? `https://backend-7vs3.onrender.com/api/commercial/lease/plots/${formData.propertyId}`
+  : 'https://backend-7vs3.onrender.com/api/commercial/lease/plots';
 
 const method = isEditMode ? axios.put : axios.post;
 

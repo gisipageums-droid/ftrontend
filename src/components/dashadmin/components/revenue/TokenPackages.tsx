@@ -42,7 +42,7 @@ const TokenPackages: React.FC = () => {
   const fetchTokenPackages = async () => {
     setLoading(true);
     try {
-      const response = await fetch("/api/tokens");
+      const response = await fetch("https://backend-7vs3.onrender.com/api/tokens");
       if (!response.ok) throw new Error("Failed to fetch token packages");
 
       const data = await response.json();
@@ -61,7 +61,7 @@ const TokenPackages: React.FC = () => {
   // Open Edit Modal with Token Data
   const handleEdit = async (id: string) => {
     try {
-      const response = await fetch(`/api/tokens/${id}`);
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/tokens/${id}`);
       if (!response.ok) throw new Error("Failed to fetch package details");
 
       const packageData = await response.json();
@@ -78,7 +78,7 @@ const TokenPackages: React.FC = () => {
       return;
 
     try {
-      const response = await fetch(`/api/tokens/${id}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/tokens/${id}`, {
         method: "DELETE",
       });
 
@@ -99,7 +99,7 @@ const TokenPackages: React.FC = () => {
     _id?: string
   ) => {
     try {
-      const response = await fetch(`/api/tokens/${_id}`, {
+      const response = await fetch(`https://backend-7vs3.onrender.com/api/tokens/${_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

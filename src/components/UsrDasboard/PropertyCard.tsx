@@ -41,7 +41,7 @@ export function PropertyCard({
         const userId = userData.id;
 
         // Fetch property images
-        const imagesResponse = await axios.get("/api/photos/upload-photos", {
+        const imagesResponse = await axios.get("https://backend-7vs3.onrender.com/api/photos/upload-photos", {
           params: { userId },
         });
 
@@ -54,7 +54,7 @@ export function PropertyCard({
 
         // Fetch property commercials (Rent)
         const commercialsResponse = await axios.get(
-          "/api/properties/property-commercials/user",
+          "https://backend-7vs3.onrender.com/api/properties/property-commercials/user",
           {
             params: { userId },
           }
@@ -68,7 +68,7 @@ export function PropertyCard({
         }
 
         // Fetch all properties
-        const allPropertiesResponse = await axios.get("/api/allproperties/all");
+        const allPropertiesResponse = await axios.get("https://backend-7vs3.onrender.com/api/allproperties/all");
         console.log("All properties:", allPropertiesResponse.data);
       } catch (error) {
         console.error("Error fetching property details:", error);

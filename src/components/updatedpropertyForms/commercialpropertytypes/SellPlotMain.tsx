@@ -297,7 +297,7 @@ const SellPlotMain = () => {
 
   // Reverse geocode to get address from coordinates
   const reverseGeocode = (lat: string, lng: string) => {
-    const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
+    const geocodingUrl = `https://maps.googleapis.com/mapshttps://backend-7vs3.onrender.com/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`;
 
     fetch(geocodingUrl)
       .then(response => response.json())
@@ -840,7 +840,7 @@ const SellPlotMain = () => {
 
       console.log("Submitting data:", transformedData);
 
-      const response = await axios.post('/api/commercial/sell/plots', transformedData, {
+      const response = await axios.post('https://backend-7vs3.onrender.com/api/commercial/sell/plots', transformedData, {
         headers: {
           'Content-Type': 'application/json'
         }
