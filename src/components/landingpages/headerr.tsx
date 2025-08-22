@@ -358,7 +358,17 @@ const Headerr: React.FC = () => {
               {/* White overlay for fade effect */}
               <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: 'white', opacity: 0.7 }} />
               {/* Faded logo background */}
-              <div className="absolute inset-0 z-10 pointer-events-none" style={{ backgroundImage: `url(${logo})`, backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', opacity: 0.30 }} />
+{/* Faded background image */}
+<div
+  className="absolute inset-0 z-10 pointer-events-none"
+  style={{
+    backgroundImage: "url(/images/rentamigologu.png)", // 👈 replace with your file name
+    backgroundSize: "cover",        // makes it fill the sidebar
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    opacity: 0.25                   // adjust transparency as needed
+  }}
+/>
               <div className="relative z-10">
                 <button
                   className="self-end mb-4 p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black"
